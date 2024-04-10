@@ -1,0 +1,89 @@
+opcion.clase (armadura, peso, velocidad, ataque, presicion) {
+    Guerrero (+100 ar, +50 p, +20 vel, +30 at, +0 pres),
+    Mago (+90 ar, +30 p, +0 vel, +50 at, +50 pres),
+    Arquero (+100 ar, +50 p, +30 vel, +0 at, +50 pres),
+    Extraterrestre (+0 ar, +0 p, +0 vel, +0 at, +0 pres),
+    Humano (+0 ar, +30 p, +30 vel, +30 at, +30 pres),
+    Elfo (+100 ar, +20 p, +0 vel, +40 at, +10 pres),
+    Enano (+100 ar, +100 p, +0 vel, +50 at, +10 pres),
+};
+opcion.armas (50 ataque + 0 presicion + peso) {
+    Francotirador (+50 at +50 pres +30 p),
+    Varita mágica (+undefined at +undefined pres +0 p),
+    Arco (+30 at +30 pres + 10 p),
+    Arma Extraterrestre (+undefined at +undefined pres +undefined p),
+    Martillo de Thor (+1000 at +30 pres +70 p),
+    Ak-47 (+50 at +30 pres +30 p),
+    Espada mágica (+600 at +20 pres +30 p),
+};
+opcion.vehiculo (50 velocidad + 10 galones de nafta) {
+    Caballo (+10 vel) contra necesita comer,
+    Auto    (+20 vel) contra necesita nafta,
+    Helicóptero (+15 vel) contra necesita nafta,
+    Moto (+20 vel) contra necesita nafta,
+    Bicicleta (+5 vel) contra desgasto fisico,
+    Nave extraterrestre (+undefined vel) contra undefined,
+    Nave espacial (+1000 vel) contra requiere conocimientos,
+};
+
+const misiones = [
+{
+id:1,
+nombre: "Dos rutas",
+opcion1: "Ir por la derecha",
+opcion2: "Ir por la izquierda",
+camino: "principal",
+},
+{
+id:2,
+nombre: "",
+opcion1: "",
+opcion2: "Ir por la izquierda",
+camino: "principal",
+},
+{
+id:3,
+nombre: "En el camino equivocado",
+opcion1: "Ir por la derecha",
+opcion2: "Ir por la izquierda",
+opcion3: ,
+camino: "principal",
+},
+{
+id:4,
+nombre: "Dos rutas",
+opcion1: "Ir por la derecha",
+opcion2: "Ir por la izquierda",
+camino: "principal",
+},
+{
+id:5,
+nombre: "Dos rutas",
+opcion1: "Ir por la derecha",
+opcion2: "Ir por la izquierda",
+camino: "principal",
+},
+{
+id:6,
+nombre: "Dos rutas",
+opcion1: "Ir por la derecha",
+opcion2: "Ir por la izquierda",
+camino: "principal",
+},
+{
+id:7,
+nombre: "Dos rutas",
+opcion1: "Ir por la derecha",
+opcion2: "Ir por la izquierda",
+camino: "principal",
+},
+{
+id:8,
+nombre: "Dos rutas",
+opcion1: "Ir por la derecha",
+opcion2: "Ir por la izquierda",
+camino: "principal",
+},
+]
+
+jugarAventura();
