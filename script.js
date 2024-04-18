@@ -1,4 +1,4 @@
-let personaje = [];
+let personaje = {};
 
 function pedirOpcion(mensaje, opciones) {
     let opcion;
@@ -12,7 +12,7 @@ personaje.nombre = prompt("Ingrese el nombre del personaje:");
 
 let genero = pedirOpcion("Elija el género del personaje:\n1-Hombre\n2-Mujer\n3-Indefinido", ["1", "2", "3"]);
 let generos = ["Hombre", "Mujer", "Indefinido"];
-personaje.genero= generos[parseInt(genero) - 1];
+personaje.genero = generos[parseInt(genero) - 1];
 
 let clase = pedirOpcion("Elija la clase del personaje:\n1-Guerrero\n2-Mago\n3-Arquero\n4-Extraterrestre\n5-Humano\n6-Elfo\n7-Enano", ["1", "2", "3", "4", "5", "6", "7"]);
 let clases = ["Guerrero", "Mago", "Arquero", "Extraterrestre", "Humano", "Elfo", "Enano"];
@@ -26,9 +26,9 @@ let transporte = pedirOpcion("Elija el transporte del personaje:\n1-Caballo\n2-A
 let transportes = ["Caballo", "Auto", "Helicóptero", "Moto", "Bicicleta", "Nave extraterrestre", "Nave espacial"];
 personaje.transporte = transportes[parseInt(transporte) - 1];
 
-alert("¡Personaje creado! Bienvenido" + [personaje.nombre]);
+let objeto = pedirOpcion("Elija el objeto del personaje:\n1-Escudo\n2-Capa mágica\n3-Flechas de fuego\n4-Dispositivo de camuflaje\n5-Mapa mágico\n6-Granada de plasma\n7-Anillo de invisibilidad", ["1", "2", "3", "4", "5", "6", "7"]);
+let objetos = ["Escudo", "Capa mágica", "Flechas de fuego", "Dispositivo de camuflaje", "Mapa mágico", "Granada de plasma", "Anillo de invisibilidad"];
 
+personaje.objeto = objetos.find((obj, index) => index === parseInt(objeto) - 1);
 
-
-
-
+alert("¡Personaje creado! Bienvenido, " + personaje.nombre);

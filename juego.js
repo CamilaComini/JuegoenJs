@@ -20,26 +20,6 @@ function jugarAventura() {
 jugarAventura();
 
 function enfrentarEnemigo() {
-    const objetos = [
-    {id:1, nombre:"Can cervero"},
-    {id:2, nombre:"Quimeras"},
-    {id:3, nombre:"Hidras"},
-    {id:4, nombre:"Cíclopes"},
-    {id:5, nombre:"Minotauro"},
-    {id:6, nombre:"Baby Doll"},
-    {id:7, nombre:"Deadshot"},
-    {id:8, nombre:"Joker"},
-    ]
-
-let indiceNombreActual = 0;
-
-function obtenerSiguienteNombre() {
-
-const nombreActual = objetos[indiceNombreActual].nombre;
-indiceNombreActual = (indiceNombreActual + 1) % objetos.length;
-return nombreActual;
-}
-
 
     const decision = prompt(`Te encuentras con un ${obtenerSiguienteNombre()}. ¿Quieres luchar o huir? (Luchar/Huir)`);
     
@@ -48,6 +28,25 @@ return nombreActual;
     } else {
     alert('Escapas del enemigo y sigues tu camino.');
     }
+}
+
+function obtenerSiguienteNombre() {
+    const objetos = [
+        {id:1, nombre:"Can cervero"},
+        {id:2, nombre:"Quimeras"},
+        {id:3, nombre:"Hidras"},
+        {id:4, nombre:"Cíclopes"},
+        {id:5, nombre:"Minotauro"},
+        {id:6, nombre:"Baby Doll"},
+        {id:7, nombre:"Deadshot"},
+        {id:8, nombre:"Joker"},
+    ];
+
+    const indiceAleatorio = Math.floor(Math.random() * objetos.length);
+
+    const nombreAleatorio = objetos[indiceAleatorio].nombre;
+
+    return nombreAleatorio;
 }
 
 function enfrentarJefeFinal() {
