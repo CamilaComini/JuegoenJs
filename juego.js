@@ -12,16 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let partidasJugadas = 0; 
     let lucharEnemigo = false; 
 
-       // Recuperar el estado del juego del localStorage al cargar la página
-    const estadoJuegoGuardado = localStorage.getItem('estadoJuego');
-    if (estadoJuegoGuardado) {
-    const estadoJuego = JSON.parse(estadoJuegoGuardado);
-    puntosVida = estadoJuego.puntosVida;
-    nivelActual = estadoJuego.nivelActual;
-    partidasJugadas = estadoJuego.partidasJugadas;
-    lucharEnemigo = estadoJuego.lucharEnemigo;
-    }
-
     iniciarBtn.addEventListener('click', function() {
         iniciarAventura();
     });
