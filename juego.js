@@ -1,63 +1,115 @@
-function jugarAventura() {
-    alert('¡Bienvenido a la aventura!');
-    alert(`Hola ${personaje.nombre}, eres un ${personaje.clase} armado con una ${personaje.arma} y un ${personaje.transporte} de vehiculo. ¡Comienza tu viaje!`);
-    
-    while (true) {
-    enfrentarEnemigo();
-    if (Math.random() < 0.3) {
-        alert('Encuentras una mejora en tu camino. ¡Tu velocidad aumenta!');
-    } else {
-        alert('Tropiezas y pierdes algo de tu economía.');
+document.addEventListener('DOMContentLoaded', function () {
+    const personaje = JSON.parse(sessionStorage.getItem('personaje'));
+    const mensajeDiv = document.getElementById('mensaje');
+    const iniciarBtn = document.getElementById('iniciarBtn');
+    const lucharBtn = document.getElementById('lucharBtn');
+    const huirBtn = document.getElementById('huirBtn');
+    const pruebaFinalBtn = document.getElementById('pruebaFinalBtn');
+
+    let enemigoActual = null;
+    let puntosVida = 100; 
+    let nivelActual = 1; 
+    let partidasJugadas = 0; 
+    let lucharEnemigo = false; 
+
+       // Recuperar el estado del juego del localStorage al cargar la página
+    const estadoJuegoGuardado = localStorage.getItem('estadoJuego');
+    if (estadoJuegoGuardado) {
+    const estadoJuego = JSON.parse(estadoJuegoGuardado);
+    puntosVida = estadoJuego.puntosVida;
+    nivelActual = estadoJuego.nivelActual;
+    partidasJugadas = estadoJuego.partidasJugadas;
+    lucharEnemigo = estadoJuego.lucharEnemigo;
     }
-    if (Math.random() < 0.2) {
-        enfrentarJefeFinal();
-        alert('¡Has completado esta aventura!');
-        break;
+
+    iniciarBtn.addEventListener('click', function() {
+        iniciarAventura();
+    });
+
+    function iniciarAventura() {
+        mostrarMensaje('¡Bienvenido a la aventura!');
+        mostrarMensaje(`Hola ${personaje.nombre}, eres un ${personaje.clase} armado con una ${personaje.arma} y un ${personaje.transporte} de vehículo. ¡Comienza tu viaje!`);
+        enfrentarEnemigo();
     }
-}
-}
 
-jugarAventura();
-
-function enfrentarEnemigo() {
-
-    const decision = prompt(`Te encuentras con un ${obtenerSiguienteNombre()}. ¿Quieres luchar o huir? (Luchar/Huir)`);
-    
-    if (decision === 'Luchar') {
-    alert('¡Has derrotado al enemigo!');
-    } else {
-    alert('Escapas del enemigo y sigues tu camino.');
+    function mostrarMensaje(mensaje) {
+        mensajeDiv.textContent += mensaje + '\n';
     }
-}
 
-function obtenerSiguienteNombre() {
-    const objetos = [
-        {id:1, nombre:"Can cervero"},
-        {id:2, nombre:"Quimeras"},
-        {id:3, nombre:"Hidras"},
-        {id:4, nombre:"Cíclopes"},
-        {id:5, nombre:"Minotauro"},
-        {id:6, nombre:"Baby Doll"},
-        {id:7, nombre:"Deadshot"},
-        {id:8, nombre:"Joker"},
-    ];
+    function enfrentarEnemigo() {
+        const nombreEnemigo = obtenerSiguienteNombre();
+        enemigoActual = nombreEnemigo;
+        mostrarMensaje(`Te encuentras con un ${nombreEnemigo}. ¿Quieres luchar o huir?`);
 
-    const indiceAleatorio = Math.floor(Math.random() * objetos.length);
+        lucharBtn.style.display = 'inline';
+        huirBtn.style.display = 'inline';
+        pruebaFinalBtn.style.display = 'none';
 
-    const nombreAleatorio = objetos[indiceAleatorio].nombre;
+        lucharBtn.onclick = function () {
+            mostrarMensaje('¡Has derrotado al enemigo!');
+            lucharBtn.style.display = 'none';
+            huirBtn.style.display = 'none';
+            setTimeout(avanzarAventura, 1000);
+        };
 
-    return nombreAleatorio;
-}
+        huirBtn.onclick = function () {
+            mostrarMensaje('Escapas del enemigo y sigues tu camino.');
+            lucharBtn.style.display = 'none';
+            huirBtn.style.display = 'none';
+            setTimeout(avanzarAventura, 1000);
+        };
+    }
 
-function enfrentarJefeFinal() {
-    const jefefinal = Math.random() < 0.5 ? 'Dragon' : 'Extraterrestre';
-    const decision = prompt(`Te encuentras con un ${jefefinal}. ¿Listo para tu prueba final? (Si)`);
-
-    if (decision === 'Si') {
-        alert('¡Felicidades has derrotado al jefe final!');
+    function avanzarAventura() {
+        if (Math.random() < 0.3) {
+            mostrarMensaje('Encuentras una mejora en tu camino. ¡Tu velocidad aumenta!');
         } else {
-        alert('La proxima vez podras');
+            mostrarMensaje('Tropiezas y pierdes algo de tu economía.');
         }
-}
+        if (Math.random() < 0.2) {
+            enfrentarJefeFinal();
+            mostrarMensaje('¡Has completado esta aventura!');
+        } else {
+            enfrentarEnemigo();
+        }
+    }
 
+    function enfrentarJefeFinal() {
+        const jefeFinal = Math.random() < 0.5 ? 'Dragon' : 'Extraterrestre';
+        const decision = confirm(`Te encuentras con un ${jefeFinal}. ¿Listo para tu prueba final?`);
 
+        if (decision) {
+            mostrarMensaje('¡Felicidades has derrotado al jefe final!');
+        } else {
+            mostrarMensaje('La próxima vez podrás');
+        }
+    }
+
+    function obtenerSiguienteNombre() {
+        const objetos = [
+            {id:1, nombre:"Can cervero"},
+            {id:2, nombre:"Quimeras"},
+            {id:3, nombre:"Hidras"},
+            {id:4, nombre:"Cíclopes"},
+            {id:5, nombre:"Minotauro"},
+            {id:6, nombre:"Baby Doll"},
+            {id:7, nombre:"Deadshot"},
+            {id:8, nombre:"Joker"},
+        ];
+
+        const indiceAleatorio = Math.floor(Math.random() * objetos.length);
+
+        return objetos[indiceAleatorio].nombre;
+    }
+
+    // Función para guardar el estado del juego en el localStorage
+    function guardarEstadoJuego() {
+        const estadoJuego = {
+            lucharEnemigo: lucharEnemigo,
+            partidasJugadas: partidasJugadas,
+            puntosVida: puntosVida,
+            nivelActual: nivelActual,    
+        };
+        localStorage.setItem('estadoJuego', JSON.stringify(estadoJuego));
+    }
+});
