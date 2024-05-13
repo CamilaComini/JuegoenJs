@@ -1,0 +1,58 @@
+[
+    {
+    "id":1,
+    "nombre": "Dragon",
+    "descripcion": "Un dragón es un animal fabuloso que aparece en la mitología, las leyendas y los cuentos populares de diversas culturas. Se describe como un reptil grande, corpulento, con garras y alas, y de gran fiereza y voracidad.",
+    "poder": "Escupe fuego",
+    "camino": "Final"
+    },
+    {
+    "id":2,
+    "nombre": "Némesis",
+    "descripcion": "Esta gigantesca figura enmascarada desplegada en una cápsula reforzada es la nueva arma biológica de Umbrella. Su diseño está basado en el formidable Tyrant, perfeccionando los pocos fallos de su predecesor. Hay dos mejoras en particular que deben ser destacadas: su autonomía, que le permite decidir por sí mismo para lograr su objetivo, y su capacidad de regeneración, la cual le permite dominar el campo de batalla sin importar las heridas que sufra.",
+    "poder": "Humanoide",
+    "camino": "Final"
+    },
+    {
+    "id":3,
+    "nombre": "Pyramid Head",
+    "descripcion": "Pyramid Head es una manifestación del deseo insatisfecho de James como castigo por la muerte de su esposa, Mary Shepherd-Sunderland. Pyramid Head también puede representar a la parte más oscura del alma de James.",
+    "poder": "Verdugo",
+    "camino": "Final"
+    },
+    {
+    "id":4,
+    "nombre": "Shao Kahn",
+    "descripcion": "Shao Kahn es conocido por su brutalidad y su sed de poder, así como por su habilidad en el combate cuerpo a cuerpo. Ha sido derrotado en múltiples ocasiones por los héroes de la serie, pero siempre regresa en busca de venganza.",
+    "poder": "Nigromancia",
+    "camino": "Final"
+    },
+    {
+    "id":5,
+    "nombre": "Drácula",
+    "descripcion": "Drácula es retratado como un ser poderoso y malévolo, capaz de controlar criaturas de la noche y lanzar hechizos mortales. A lo largo de los juegos, los jugadores deben enfrentarse a él en batallas épicas para salvar a la humanidad de su malvado plan.",
+    "poder": "Magia",
+    "camino": "Final"
+    },
+    {
+    "id":6,
+    "nombre": "Sephiroth",
+    "descripcion": "Sefirot tiene la apariencia de un hombre joven alto y de apariencia musculosa y atlética entrado en sus 27 años aproximadamente, con el cabello largo que llega hasta la parte baja de la cadera con dos flequillos a ambos lados de la cabeza que llegan a la altura del pecho.",
+    "poder": "Super-resistente",
+    "camino": "Final"
+    },
+    {
+    "id":7,
+    "nombre": "Kirby",
+    "descripcion": "Kirby proviene del planeta Pop Star, donde vive en una casa con forma de cúpula en el lugar imaginario de Dream Land. ​ Tiene una actitud positiva, amistosa e ingenua, y en ocasiones se le caracteriza con un apetito voraz. ​ Además es alguien valiente y siempre dispuesto a usar sus poderes para ayudar a los demás.",
+    "poder": "Absorcion",
+    "camino": "Final"
+    },
+    {
+    "id":8,
+    "nombre": "Vaas",
+    "descripcion": "Líder de los piratas que asolan las Islas Rook, es impulsivo, sádico, inestable y se describe como un loco. Vaas y sus piratas tienen una gran presencia en la Isla Norte, que puede ser disminuida mediante varias acciones adoptadas durante la aventura.",
+    "poder": "Esquivar",
+    "camino": "Final"
+    }
+]

@@ -1,0 +1,59 @@
+[
+    {
+    "id":1,
+    "nombre": "Can cervero",
+    "descripcion": "El Can Cerbero, era el perro de Hades. Es un ser muy fiero con la forma de un perro de tres cabezas y una cola con serpientes. Los ojos son rojos y están iluminados por una luz sobrenatural. De sus colmillos se desprende un veneno negro y mortal.",
+    "poder": "veneno,mordida",
+    "camino": "principal"
+    },
+    {
+    "id":2,
+    "nombre": "Quimeras",
+    "descripcion": "Monstruo femenino que lanzaba fuego por la boca, con la parte delantera de un león, el centro de una cabra y la trasera de un dragón.",
+    "poder": "fuego",
+    "camino": "principal"
+    },
+    {
+    "id":3,
+    "nombre": "Hidras",
+    "descripcion": "La Hidra de Lerna era un monstruo del inframundo con forma de serpiente de múltiples cabezas",
+    "poder": "regeneracion",
+    "camino": "principal"
+    },
+    {
+    "id":4,
+    "nombre": "Cíclopes",
+    "descripcion": "Los cíclopes eran una raza de gigantes irascibles con un único ojo en medio de la frente",
+    "poder": "gigantismo",
+    "camino": "principal"
+    },
+    {
+    "id":5,
+    "nombre": "Minotauro",
+    "descripcion": "El Minotauro resultó ser un monstruo salvaje que a medida que crecía se hacía más salvaje. Tan solo se alimentaba de carne humana así que hubo que tomar medidas para mantenerlo a raya. Dédalo construyó un laberinto lleno de pasadizos entrecruzados y encerró ahí al ser mitológico para toda la eternidad.",
+    "poder": "superfuerza",
+    "camino": "principal"
+    },
+    {
+    "id":6,
+    "nombre": "Baby Doll",
+    "descripcion": "Era un agente de sexo femenino que nació con hipoplasia sistémica, una enfermedad rara que le impedía crecer, lo que significa que se pasó toda su vida con el aspecto de una niña pequeña.",
+    "poder" : "encogerse",
+    "camino": "principal"
+    },
+    {
+    "id":7,
+    "nombre": "Deadshot",
+    "descripcion": "Es un pistolero a sueldo, conocido por ser el segundo asesino más letal de todo el universo de DC Comics",
+    "poder": "el mejor francotirador del mundo",
+    "camino": "principal"
+    },
+    {
+    "id":8,
+    "nombre": "Joker",
+    "descripcion": "El Joker es uno de los villanos más influyentes en la historia de los cómics, y uno de los mejor reconocidos a nivel masivo. Una amenaza para héroes y villanos, es uno de los antagonistas más siniestros y peligrosos del Universo DC. ",
+    "poder": "gran intelecto",
+    "camino": "principal"
+    }
+]
+    

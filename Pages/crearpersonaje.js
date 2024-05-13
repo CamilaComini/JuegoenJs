@@ -16,5 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
         sessionStorage.setItem('personaje', JSON.stringify(personaje));
 
         alert("¡Personaje creado! Bienvenido, " + personaje.nombre);
+        iniciarAventura();
     });
 });
