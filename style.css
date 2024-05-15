@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('tu_fondo_en_movimiento.jpg') center center fixed; /* Fondo en movimiento */
+    background-size: cover; /* Cubre todo el viewport */
+    color: white; /* Letras claras */
+    font-family: Arial, sans-serif; /* Tipo de fuente */
+}
+
+.container {
+    width: 80%; /* Ancho del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 20px; /* Espacio interior del contenedor */
+}
+
+.character-selection {
+    background-color: black; /* Cuadro de elección de personaje en negro */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.story {
+    text-align: center; /* Centrar texto */
+    margin-top: 20px; /* Espacio arriba */
+}
+
+.buttons {
+    text-align: center; /* Centrar los botones */
+    margin-top: 50px; /* Espacio arriba */
+}
+
+.buttons button {
+    margin: 0 20px; /* Espacio entre los botones */
+    padding: 10px 20px; /* Espacio interior de los botones */
+    background-color: red; /* Color rojo */
+    color: white; /* Letras claras */
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+}
