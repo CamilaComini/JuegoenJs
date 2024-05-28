@@ -4,72 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sempiterno</title>
-    <script src="juego.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 <body>
-    <h1>Crear Personaje</h1>
-    <form id="characterForm">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" required><br><br>
+    <video id="background-video" autoplay loop muted>
+        <source src="/fondomovimiento/telepoorte_fnl.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
 
-        <label for="genero">Género:</label>
-        <select id="genero">
-            <option value="Hombre">Hombre</option>
-            <option value="Mujer">Mujer</option>
-            <option value="Indefinido">Indefinido</option>
-        </select><br><br>
+    <div class="container">
+        <form id="characterForm">
+            <h1>Crear Personaje</h1>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required><br><br>
 
-        <label for="clase">Clase:</label>
-        <select id="clase">
-            <option value="Guerrero">Guerrero</option>
-            <option value="Mago">Mago</option>
-            <option value="Arquero">Arquero</option>
-            <option value="Extraterrestre">Extraterrestre</option>
-            <option value="Humano">Humano</option>
-            <option value="Elfo">Elfo</option>
-            <option value="Enano">Enano</option>
-        </select><br><br>
+            <label for="genero">Género:</label>
+            <select id="genero">
+                <option value="Hombre">Hombre</option>
+                <option value="Mujer">Mujer</option>
+                <option value="Indefinido">Indefinido</option>
+            </select><br><br>
 
-        <label for="arma">Arma:</label>
-        <select id="arma">
-            <option value="Francotirador">Francotirador</option>
-            <option value="Varita mágica">Varita mágica</option>
-            <option value="Arco">Arco</option>
-            <option value="Arma Extraterrestre">Arma Extraterrestre</option>
-            <option value="Martillo de Thor">Martillo de Thor</option>
-            <option value="Ak-47">Ak-47</option>
-            <option value="Espada mágica">Espada mágica</option>
-        </select><br><br>
+            <label for="clase">Clase:</label>
+            <select id="clase">
+                <option value="Guerrero">Guerrero</option>
+                <option value="Mago">Mago</option>
+                <option value="Arquero">Arquero</option>
+                <option value="Extraterrestre">Extraterrestre</option>
+                <option value="Humano">Humano</option>
+                <option value="Elfo">Elfo</option>
+                <option value="Enano">Enano</option>
+            </select><br><br>
 
-        <label for="transporte">Transporte:</label>
-        <select id="transporte">
-            <option value="Caballo">Caballo</option>
-            <option value="Auto">Auto</option>
-            <option value="Helicóptero">Helicóptero</option>
-            <option value="Moto">Moto</option>
-            <option value="Bicicleta">Bicicleta</option>
-            <option value="Nave extraterrestre">Nave extraterrestre</option>
-            <option value="Nave espacial">Nave espacial</option>
-        </select><br><br>
+            <label for="arma">Arma:</label>
+            <select id="arma">
+                <option value="Francotirador">Francotirador</option>
+                <option value="Varita mágica">Varita mágica</option>
+                <option value="Arco">Arco</option>
+                <option value="Arma Extraterrestre">Arma Extraterrestre</option>
+                <option value="Martillo de Thor">Martillo de Thor</option>
+                <option value="Ak-47">Ak-47</option>
+                <option value="Espada mágica">Espada mágica</option>
+            </select><br><br>
 
-        <label for="objeto">Objeto:</label>
-        <select id="objeto">
-            <option value="Escudo">Escudo</option>
-            <option value="Capa mágica">Capa mágica</option>
-            <option value="Flechas de fuego">Flechas de fuego</option>
-            <option value="Dispositivo de camuflaje">Dispositivo de camuflaje</option>
-            <option value="Mapa mágico">Mapa mágico</option>
-            <option value="Granada de plasma">Granada de plasma</option>
-            <option value="Anillo de invisibilidad">Anillo de invisibilidad</option>
-        </select><br><br>
+            <label for="transporte">Transporte:</label>
+            <select id="transporte">
+                <option value="Caballo">Caballo</option>
+                <option value="Auto">Auto</option>
+                <option value="Helicóptero">Helicóptero</option>
+                <option value="Moto">Moto</option>
+                <option value="Bicicleta">Bicicleta</option>
+                <option value="Nave extraterrestre">Nave extraterrestre</option>
+                <option value="Nave espacial">Nave espacial</option>
+            </select><br><br>
 
-        <button type="submit">Crear Personaje</button>
-    </form>
+            <label for="objeto">Objeto:</label>
+            <select id="objeto">
+                <option value="Escudo">Escudo</option>
+                <option value="Capa mágica">Capa mágica</option>
+                <option value="Flechas de fuego">Flechas de fuego</option>
+                <option value="Dispositivo de camuflaje">Dispositivo de camuflaje</option>
+                <option value="Mapa mágico">Mapa mágico</option>
+                <option value="Granada de plasma">Granada de plasma</option>
+                <option value="Anillo de invisibilidad">Anillo de invisibilidad</option>
+            </select><br><br>
 
-    <div id="mensaje"></div>
-    <button id="iniciarBtn" style="display: none;">Iniciar aventura</button>
-    <button id="lucharBtn" style="display: none;">Luchar</button>
-    <button id="huirBtn" style="display: none;">Huir</button>
-    <button id="pruebaFinalBtn" style="display: none;">Prueba Final</button>
+            <button type="submit">Crear Personaje</button>
+        </form>
+
+        <div id="mensaje"></div>
+        <button id="iniciarBtn">Iniciar aventura</button>
+        <button id="lucharBtn">Luchar</button>
+        <button id="huirBtn">Huir</button>
+        <button id="pruebaFinalBtn">Prueba Final</button>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="juego.js" defer></script>
 </body>
 </html>
