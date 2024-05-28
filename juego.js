@@ -50,18 +50,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     function avanzarAventura() {
-        if (Math.random() < 0.3) {
-            Swal.fire('Avanzando en la aventura', 'Caminando por la mazmorra, ves que se empieza a dividir en dos caminos, pero después de un fuerte estruendo, se bloquea el camino de la derecha, obligándote a ir por la izquierda.', 'info')
-                .then(() => {
-                    enfrentarEnemigo(); 
-                });
-        } else {
-            Swal.fire('Avanzando en la aventura', 'Caminando por la mazmorra, ves que se empieza a dividir en dos caminos, pero después de un fuerte estruendo, se bloquea el camino de la izquierda, obligándote a ir por la derecha.', 'info')
-                .then(() => {
-                    enfrentarEnemigo();
-                });
-        }
-    }    
+        Swal.fire('Aventura','Bienvenido a la mazmorra sempiterna, la primera mazmorra sin fin donde te enfrentarás a los enemigos más temibles de la historia. Tu aventurero tiene lo necesario para entrar a estos pisos interminables y poder escapar derrotando a un temeroso jefe final donde todo será puesto en dudas. Si es así, ¡bienvenido a la mejor mazmorra! Toca el botón de iniciar aventura para adentrarte en las paredes del inframundo.','info')
+        .then(() => {
+            if (Math.random() < 0.3) {
+                Swal.fire('Avanzando en la aventura', 'Caminando por la mazmorra, ves que se empieza a dividir en dos caminos, pero después de un fuerte estruendo, se bloquea el camino de la derecha, obligándote a ir por la izquierda.', 'info')
+                    .then(() => {
+                        enfrentarEnemigo(); 
+                    });
+            } else {
+                Swal.fire('Avanzando en la aventura', 'Caminando por la mazmorra, ves que se empieza a dividir en dos caminos, pero después de un fuerte estruendo, se bloquea el camino de la izquierda, obligándote a ir por la derecha.', 'info')
+                    .then(() => {
+                        enfrentarEnemigo();
+                    });
+                }
+        });
+    }
 
     async function obtenerEnemigo() {
         const response = await fetch('/Json/enemigo.json');
@@ -115,12 +118,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     async function enfrentarJefeFinal() {
-        const nombreJefe = await obtenerNombreJefeFinal();
-        const decision = confirm(`Te encuentras con el jefe más temeroso de todos, su nombre es ${nombreJefe}. ¿Estás seguro de que tienes lo necesario para vencerlo?`);
-        if (decision) {
-            Swal.fire('¡Felicidades!', 'Has logrado escapar de este principio sin fin. Aunque, ¿estás seguro de que escapaste?', 'success');
-        } else {
-            Swal.fire('Valentía nula', 'Esa valentía es nula.', 'error');
+        try {
+            const nombreJefe = await obtenerNombreJefeFinal();
+            Swal.fire({
+                title: 'Enfrentar Jefe Final',
+                text: `Te encuentras con el jefe más temeroso de todos, su nombre es ${nombreJefe}. ¿Estás seguro de que tienes lo necesario para vencerlo?`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí, estoy listo',
+                cancelButtonText: 'No, mejor no'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire('¡Felicidades!', 'Has logrado escapar de este principio sin fin. Aunque, ¿estás seguro de que escapaste?', 'success');
+                } else {
+                    Swal.fire('Valentía nula', 'Esa valentía es nula.', 'error');
+                }
+            });
+        } catch (error) {
+            Swal.fire('Error', 'No se pudo cargar el nombre del jefe final. Inténtalo de nuevo más tarde.', 'error');
         }
-    }
+    }    
 });
